@@ -18,4 +18,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Agenda.Domain\Agenda.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

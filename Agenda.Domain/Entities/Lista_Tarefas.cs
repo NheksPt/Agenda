@@ -1,4 +1,6 @@
-﻿namespace Agenda.Domain.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Agenda.Domain.Entities
 {
     public class Lista_Tarefas
     {

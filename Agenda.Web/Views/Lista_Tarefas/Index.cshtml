@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Agenda.Domain.Entities.Lista_Tarefas>
+
+<div class="w-100 card border-0 p-4">
+    <div class="card-header rounded m-lg-0 py-3" style="background-color: #EC9706;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Lista de Tarefas</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body border rounded p-6">
+        <div class="row pb-3">
+            <div class="col-6 offset-6 text-end">
+                <a asp-controller="Lista_Tarefas" asp-action="Criar" class="btn btn-secondary">
+                    <i class="bi bi-list-task"></i> Criar Nova Lista de Tarefas
+                </a>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                    <th>Criação</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var obj in Model)
+                {
+                    <tr>
+                        <td>@obj.Tipo</td>
+                        <td>@obj.Descrição</td>
+                        <td>@obj.Criação</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
