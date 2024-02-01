@@ -23,6 +23,7 @@
                     <th>Tipo</th>
                     <th>Descrição</th>
                     <th>Criação</th>
+                    <th></th>
                 </tr>
             </thead>
 
@@ -33,6 +34,17 @@
                         <td>@obj.Tipo</td>
                         <td>@obj.Descrição</td>
                         <td>@obj.Criação</td>
+                        <td>
+                            <div class="w-75 btn-group" role="group">
+                              <a asp-controller="Lista_Tarefas" asp-action="Editar" asp-route-lista_tarefasId="@obj.Id" class="btn btn-success mx-2">
+                                 <i class="bi bi-pencil-square"></i> Editar
+                              </a>
+                            
+                              <a asp-controller="Lista_Tarefas" asp-action="Apagar" asp-route-lista_tarefasId="@obj.Id" class="btn btn-danger mx-2">
+                                 <i class="bi bi-trash-fill"></i> Apagar
+                              </a>
+                            </div>
+                        </td>
                     </tr>
                 }
             </tbody>

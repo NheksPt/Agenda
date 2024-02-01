@@ -4,35 +4,33 @@
     <div class="card-header rounded m-lg-0 py-3" style="background-color: #EC9706;">
         <div class="row">
             <div class="col-12 text-center">
-                <h2 class="text-white py-2">Lista de Tarefas</h2>
+                <h2 class="text-white py-2">Apagar Tarefas</h2>
             </div>
         </div>
     </div>
 
     <div class="card-body border rounded p-6">
         <form method="post" class="row">
+            <input asp-for="Id" hidden />
             <div class="p-3">
-                <div asp-validation-summary="ModelOnly"></div>
 
                 <div class="form-floating py-1 col-12">
-                    <input asp-for="Tipo" class="form-control border-bottom shadow" />
+                    <input asp-for="Tipo" disabled class="form-control border-bottom shadow" />
                     <label asp-for="Tipo" class="ms-2">Nome</label>
-                    <span asp-validation-for="Tipo" class="text-danger"></span>
                 </div>
                 <div class="form-floating py-1 col-12">
-                    <input asp-for="Descrição" class="form-control border-bottom shadow" />
+                    <input asp-for="Descrição" disabled class="form-control border-bottom shadow" />
                     <label asp-for="Descrição" class="ms-2">Descrição</label>
-                    <span asp-validation-for="Descrição" class="text-danger"></span>
                 </div>
                 <div class="form-floating py-1 col-12">
-                    <input asp-for="Criação" class="form-control border-bottom shadow" />
+                    <input asp-for="Criação" disabled class="form-control border-bottom shadow" />
                     <label asp-for="Criação" class="ms-2">Criação</label>
                 </div>
 
                 <div class="row pt-2">
                     <div class="col-12 col-md-3">
-                        <button type="submit" class="btn btn-success w-100">
-                            <i class="bi bi-check-circle"></i> Criar
+                        <button type="submit" class="btn btn-danger w-100">
+                            <i class="bi bi-trash-fill"></i> Apagar
                         </button>
                     </div>
                     <div class="col-12 col-md-3">
