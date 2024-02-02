@@ -3,20 +3,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Agenda.Domain.Entities
 {
-    public class Tarefas
+    public class Tarefa
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Tarefa { get; set; }
+        public int Tarefa_ { get; set; }
 
         [ForeignKey("Lista_Tarefas")]
-        public int Lista_TarefasId { get; set; }
+        public int Lista_TarefasID { get; set; }
         public Lista_Tarefas? Lista_Tarefas { get; set; }
-
-
-        public required string Nome { get; set; }
-        public required string Detalhes { get; set; } 
-        public enum Prioridade { Baixa, Média, Alta }
+        public required string Defenição { get; set; }
         public DateTime Prazo { get; set; }
+        public required string Prioridade { get; set; }
 
     }
 }
+

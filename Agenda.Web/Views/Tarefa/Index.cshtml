@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Tarefa>
+
+<div class="w-100 card border-0 p-4">
+    <div class="card-header rounded m-lg-0 py-3" style="background-color: #EC9706;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Tarefas</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body border rounded p-6">
+        <div class="row pb-3">
+            <div class="col-6 offset-6 text-end">
+                <a asp-controller="Tarefa" asp-action="Criar" class="btn btn-secondary">
+                    <i class="bi bi-list-task"></i> Criar Nova Tarefa
+                </a>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Tarefa</th>
+                    <th>Lista_TarefasId</th>
+                    <th>Defenição</th>
+                    <th>Prazo</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var obj in Model)
+                {
+                    <tr>
+                        <td>@obj.Tarefa_</td>
+                        <td>@obj.Lista_TarefasID</td>
+                        <td>@obj.Defenição</td>
+                        <td>@obj.Prazo</td>
+                        <td>
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-controller="Tarefas" asp-action="Editar" asp-route-lista_tarefasId="@obj.Tarefa_" class="btn btn-success mx-2">
+                                    <i class="bi bi-pencil-square"></i> Editar
+                                </a>
+
+                                <a asp-controller="Tarefas" asp-action="Apagar" asp-route-lista_tarefasId="@obj.Tarefa_" class="btn btn-danger mx-2">
+                                    <i class="bi bi-trash-fill"></i> Apagar
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

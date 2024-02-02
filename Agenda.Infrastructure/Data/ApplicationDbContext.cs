@@ -12,6 +12,7 @@ namespace Agenda.Infrastructure.Data
 
         public DbSet<Lista_Tarefas> Listas_Tarefas { get; set; }
 
+        public DbSet<Tarefa> Tarefas { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // base.OnModelCreating(modelBuilder);
